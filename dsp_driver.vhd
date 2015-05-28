@@ -1,3 +1,6 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
 entity dsp_driver is
   port( clk                     :   in    std_logic;
         dig0, dig1, dig2, dig3  :   in    integer range 0 to 9;
