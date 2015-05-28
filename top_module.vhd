@@ -18,7 +18,7 @@ begin
         rst_n     :   in  std_logic;    --async resest input
         clk_digit :   out std_logic;    --16kHz clock for digit multiplexing
         clk_1sec  :   out std_logic);    -- 1 second clock output
-  end compoenent;
+  end component;
   component dsp_driver is
     port( clk                     :   in    std_logic;
         dig0, dig1, dig2, dig3  :   in    integer range 0 to 9;
