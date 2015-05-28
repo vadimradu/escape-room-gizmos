@@ -11,4 +11,14 @@ end entity;
 architecture rtl  of sec_clock_generator  is
   signal counter : std_logic_vector(15 downto 0) := (others => '0');
   begin
+  process (clk_32k, rst_n) is
+  begin
+    if( rst_n = '0') then
+      counter = "0000000000000000";
+    elsif( rising_edge(clk_32k)) then
+      counter = counter + 1;
+    end if;
+  end process;
+  clk_1sec <= counter(15); 
+  clk_digit <= counter(1); --16kHz should suffice for flicker free rendering
 end architecture;
